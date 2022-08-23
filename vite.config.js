@@ -4,14 +4,14 @@ import basicSsl from '@vitejs/plugin-basic-ssl'
 
 export default defineConfig({
     plugins: [
-        basicSsl(),
+        // basicSsl(),
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             refresh: true,
         }),
     ],
     server: {
-        https: true,
+        // https: true,
         hmr: {
             host: 'localhost',
         },
