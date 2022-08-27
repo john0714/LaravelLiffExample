@@ -1,9 +1,12 @@
-@extends('layouts.app')
+<x-app>
+    {{-- Laravel컴포넌트(x-형식), __()[constant]의 사용법 메모 --}}
+    <x-slot:title>
+        {{ __('passwords.Test') }}
+    </x-slot:title>
 
-@section('content')
     <div class="flex justify-center">
         <div class="w-4/12 bg-white p-6 rounded-lg mb-1">
-            <form action="{{ route('register') }}" method="post">
+            <form action="{{ route('login') }}" method="post">
                 @csrf
                 <div class="mb-4">
                     <label for="email" class="sr-only">Email</label>
@@ -38,4 +41,4 @@
             </form>
         </div>
     </div>
-@endsection
+</x-app>
