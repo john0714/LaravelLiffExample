@@ -1,11 +1,17 @@
-<x-app>
+<x-layouts.app>
     {{-- Laravel컴포넌트(x-형식), __()[constant]의 사용법 메모 --}}
-    <x-slot:title>
+    {{-- <x-slot:title>
         {{ __('passwords.Test') }}
-    </x-slot:title>
+    </x-slot:title> --}}
 
     <div class="flex justify-center">
         <div class="w-4/12 bg-white p-6 rounded-lg mb-1">
+            @if (session()->has('status'))
+                <div class="bg-red-500 p-4 rounded-lg mb-6 text-white text-center">
+                    {{ session('status') }}
+                </div>
+            @endif
+
             <form action="{{ route('login') }}" method="post">
                 @csrf
                 <div class="mb-4">
@@ -34,6 +40,13 @@
                     @enderror
                 </div>
 
+                <div class=mb-4>
+                    <div class="flex items-center">
+                        <input type="checkbox" name="remeber" id="remember" class="mr-2">
+                        <label for="remeber">Remember me</label>
+                    </div>
+                </div>
+
                 <div>
                     <button type="submit"
                         class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full">Login</button>
@@ -41,4 +54,4 @@
             </form>
         </div>
     </div>
-</x-app>
+</x-layouts.app>

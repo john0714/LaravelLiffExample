@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<x-layouts.app>
     <div class="flex justify-center">
         <div class="w-4/12 bg-white p-6 rounded-lg mb-1">
             <form action="{{ route('register') }}" method="post">
@@ -71,4 +69,4 @@
             </form>
         </div>
     </div>
-@endsection
+</x-layouts.app>
